@@ -1,0 +1,7 @@
+#!/bin/bash
+
+dmenu="dmenu -i -nb darkred -sb red -sf white -nf gray -fn mononoki-13"
+option=$(echo -e "poweroff\nreboot\nhibernate\nsuspend\nlogout" | ${dmenu} -p "What you want to do?") \
+	&& opt="$(echo $option | tr a-z A-Z)" \
+	&& [ "$(printf "No\\nYes" | ${dmenu} -p "${opt} now?")" = "Yes" ] \
+	&& if [ $option == "logout" ]; then i3-msg exit; else systemctl $option; fi
