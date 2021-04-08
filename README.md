@@ -1,2 +1,3 @@
-# Lasqueira
-Chatuba de mesquita
+# Config
+ Config Linux i3
+ 
